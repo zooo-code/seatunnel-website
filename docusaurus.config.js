@@ -119,6 +119,13 @@ const config = {
         `,
     },
   ],
+  scripts: [
+    '/js/google_translate_init.js',  // Load synchronously first
+    {
+      src: 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit',
+      async: true,
+    },
+  ],
   presets: [
     [
       "classic",

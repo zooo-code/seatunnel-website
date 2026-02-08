@@ -74,7 +74,7 @@ export default function () {
                 <div className="block">
 
                     <div className="banner text_center">
-                        <h1 className="main_title"><span className="apache">Apache</span> <span
+                        <h1 className="main_title notranslate" translate="no"><span className="apache">Apache</span> <span
                             className="seatunnel">SeaTunnel</span>
                         </h1>
 
@@ -86,14 +86,14 @@ export default function () {
                             <a href={systemConfiguration.github.projectUrl} target="_blank"
                             className="corner_button link_btn blue" onMouseOver={() => changeFlag(1)} onMouseOut={() => changeFlag(2)}>
                                 <img className="button_icon github1" src={useBaseUrl('/home/icons/github' + flag + '.svg')} alt="github"/>
-                                <span>GitHub</span>
+                                <span className="notranslate">GitHub</span>
                             </a>
                             <a href="https://s.apache.org/seatunnel-slack"
                             target="_blank"
                             className="corner_button link_btn blue"
                             >
                                 <img className="button_icon" src={useBaseUrl('/home/icons/slack.svg')} alt="slack"/>
-                                <span>Slack</span>
+                                <span className="notranslate">Slack</span>
                             </a>
                         </div>
                     </div>
