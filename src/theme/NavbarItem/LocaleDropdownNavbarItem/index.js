@@ -72,12 +72,8 @@ export default function LocaleDropdownNavbarItem({
         // Listen for storage events (from other tabs/windows)
         window.addEventListener('storage', updateLabel);
 
-        // Poll for cookie changes (fallback)
-        const interval = setInterval(updateLabel, 1000);
-
         return () => {
             window.removeEventListener('storage', updateLabel);
-            clearInterval(interval);
         };
     }, [currentLocale, localeConfigs]);
 
@@ -144,6 +140,8 @@ export default function LocaleDropdownNavbarItem({
                     }
                 };
                 clearCookie('googtrans');
+                // Update the label immediately
+                setCurrentLangLabel(localeConfigs[locale].label);
             }
         };
     });
@@ -157,6 +155,8 @@ export default function LocaleDropdownNavbarItem({
             onClick: (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                // Update the label immediately
+                setCurrentLangLabel(lang.label);
                 handleGoogleTranslate(lang.code);
                 return false;
             },
